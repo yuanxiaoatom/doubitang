@@ -1,0 +1,179 @@
+[ 2016-08-18T22:56:41+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002235s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002687s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000792s ]
+SQL: SHOW COLUMNS FROM `qifan_config` [ RunTime:0.0033s ]
+SQL: SELECT `type`,`name`,`value` FROM `qifan_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `qifan_channel` [ RunTime:0.0196s ]
+SQL: SELECT `title`,`url` FROM `qifan_channel` ORDER BY sort asc  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000475s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000556s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082877s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000558s ]
+
+[ 2016-08-18T22:56:44+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/louyu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002209s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+SQL: SHOW COLUMNS FROM `qifan_config` [ RunTime:0.0028s ]
+SQL: SELECT `type`,`name`,`value` FROM `qifan_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000260s ]
+NOTIC: [8] Undefined variable: area C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.069868s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.069957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000955s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001051s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001247s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001345s ]
+
+[ 2016-08-18T22:59:28+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/gion.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001576s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `qifan_config` [ RunTime:0.0026s ]
+SQL: SELECT `type`,`name`,`value` FROM `qifan_config` WHERE `status` = 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000269s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000412s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.077664s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077779s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000896s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001007s ]
+
+[ 2016-08-18T23:00:07+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/rental.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003684s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001161s ]
+SQL: SHOW COLUMNS FROM `qifan_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `qifan_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'qifan_one_thinkphp.qifan_user_company' doesn't exist
+
+[ 2016-08-18T23:00:10+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/louyu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003311s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003967s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001104s ]
+SQL: SHOW COLUMNS FROM `qifan_config` [ RunTime:0.0027s ]
+SQL: SELECT `type`,`name`,`value` FROM `qifan_config` WHERE `status` = 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Undefined variable: area C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013378s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013447s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000783s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000881s ]
+
+[ 2016-08-18T23:08:21+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/louyu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003221s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003831s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+SQL: SHOW COLUMNS FROM `qifan_config` [ RunTime:0.0031s ]
+SQL: SELECT `type`,`name`,`value` FROM `qifan_config` WHERE `status` = 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Undefined variable: area C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013043s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013115s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000712s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000779s ]
+
+[ 2016-08-18T23:08:25+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/louyu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002544s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002970s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000629s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+SQL: SHOW COLUMNS FROM `qifan_config` [ RunTime:0.0029s ]
+SQL: SELECT `type`,`name`,`value` FROM `qifan_config` WHERE `status` = 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000102s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+NOTIC: [8] Undefined variable: area C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013049s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013130s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000689s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2016-08-18T23:09:19+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/louyu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002887s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+SQL: SHOW COLUMNS FROM `qifan_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `qifan_config` WHERE `status` = 1  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+NOTIC: [8] Undefined variable: area C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Home\596048fd91cb84c19c0e844066aef9b6.php 第 50 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001004s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001082s ]
+

@@ -1,0 +1,297 @@
+<extend name="Public/typebase" />
+<block name="body">
+<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <div class="main-title cf">
+        <h2>查看 [<?php echo $info['title']?>]</h2>
+    </div>
+    <!-- 标签页导航 -->
+<div class="tab-wrap">
+    <ul class="tab-nav nav">
+			<volist name=":parse_config_attr($model['field_group'])" id="group">
+			<li data-tab="tab{$key}" <eq name="key" value="1">class="current"</eq>><a href="javascript:void(0);">{$group}</a></li>
+			</volist>
+    </ul>
+    <div class="tab-content">
+    <!-- 表单 -->
+    <style type='text/css'>
+    	td{ cellpadding:10px; height:50px; line-height:50px;}
+    	td input[type=text]{ border:1px solid #ccc; height:35px; width:300px;}
+    	td span{ padding:0 20px;}
+    	
+    
+    </style>
+    <form name='form1' action="__ACTION__" method = 'post' enctype="multipart/form-data">
+    	<table width='100%' cellpadding = '10'>
+    		<tr>
+    			<td>选择城市：</td>
+    			<td>
+    				<p><select name="city_id" onchange="getDiqu(this.value)" style="float:left; margin-right:20px;">
+    					<option value="40">请选择城市</option>
+    					<?php foreach($citylist as $v){?>
+    						<option value="<?php echo $v['id']?>" <?php echo $v['id'] == $info['city_id'] ?'selected = selected':''?>><?php echo $v['title']?></option>
+    					<?php } ?>
+    				</select>
+    				<p>
+    				
+    				<p id = 'quyu'></p>
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>选择功能</td>
+    			<td>
+    			<select name="gongneng_id">
+    				<option value="">请选择功能</option>
+    				<?php foreach($gongnengList as $v){?>
+    					<option value="<?php echo $v['id']?>" <?php echo $v['id'] == $info['gongneng_id']?'selected=selected':''?>><?php echo $v['title']?></option>
+    				<?php } ?>
+    			</select>
+    			
+    			</td>
+    		
+    		</tr>
+    		
+    		<tr>
+    			<td>选择类型</td>
+    			<td>
+    			
+    			<select name="leixing_id">
+    				<option value="">请选择类型</option>
+    				<?php foreach($leixingList as $v){?>
+    					<option value="<?php echo $v['id']?>" <?php echo $v['id'] == $info['leixing_id']? 'selected=selected' : ''?>><?php echo $v['title']?></option>
+    				<?php } ?>
+    			</select>
+    				
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>选择级别</td>
+    			<td>
+    				<select name="jibie_id">
+    				<option value="">请选择级别</option>
+    				<?php foreach($jibieList as $v){?>
+    					<option value="<?php echo $v['id']?>" <?php echo $v['id'] == $info['jibie_id']?'selected=selected':''?>> <?php echo $v['title']?></option>
+    				<?php } ?>
+    			</select>
+    			
+    			</td>
+    			
+    		</tr>
+    	
+    		
+    	
+    		<tr>
+    			<td width="10%">标题：</td>
+    			<td><input type="text" name="title" value="<?php echo $info['title']?>"></td>
+    		</tr>
+    		<tr>
+    			<td>相册</td>
+    			<td>
+    				<table width="90%" id="album-table">
+			          <tr>
+			            <td><a href="javascript:"  onclick="copyimg(this)">[+]</a>上传文件：</td>
+			            <td><input type="file" name="photo[]"/></td>
+			          </tr>
+			        </table>
+    			
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>原图：</td>
+    			<td>
+    			
+    				<?php foreach($thumb as $k=>$v){?>
+    					<span><img src = "<?php echo $thumb[$k]?>"></span>
+    				<?php }?>
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>推荐指数：</td>
+    			<td><input type="text" name="leave" value="<?php echo $info['leave']?>"></td>
+    		</tr>
+    		
+    		<tr>
+    			<td>企业服务：</td>
+    			<td>
+
+    				<input type="text" name="servers[]" value="<?php echo $servers[0]?>">
+    				<input type="text" name="servers[]" value="<?php echo $servers[1]?>">
+    				<input type="text" name="servers[]" value="<?php echo $servers[2]?>">
+    			
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>企业优势标示语</td>
+    			<td>
+	    			<span><input type="radio" name="is_biaoshi" value="1" <?php echo $info['is_biaoshi']==1 ? 'checked=checked':''?> />是</span>
+	    			<span><input type="radio" name="is_biaoshi" value="0" <?php echo $info['is_biaoshi']==0 ? 'checked=checked':''?>/>否</span>
+    			</td>
+    		</tr>
+    	
+    		<tr>
+    			<td>主导产业</td>
+    			<td>
+	    			<input type="text" name="chanye" value="<?php echo $info['chanye']?>" />
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>基础设施</td>
+    			<td>
+	    			<input type="text" name="sheshi" value="<?php echo $info['sheshi']?>" />
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>园区面积</td>
+    			<td>
+	    			<input type="text" name="mianji" value="<?php echo $info['mianji']?>" />
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>土地价格</td>
+    			<td>
+	    			<input type="text" name="jiage" value="<?php echo $info['jiage']?>" />
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>投资</td>
+    			<td>
+	    			<input type="text" name="touzi" value="<?php echo $info['touzi']?>" />
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>税收</td>
+    			<td>
+	    			<input type="text" name="shuishou" value="<?php echo $info['shuishou']?>" />
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>园区厂房</td>
+    			<td>
+	    			<input type="text" name="changfang" value="<?php echo $info['changfang']?>" />
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>租赁价格</td>
+    			<td>
+	    			<input type="text" name="zulinjiage" value="<?php echo $info['zulinjiage']?>" />
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>地址</td>
+    			<td>
+	    			<input type="text" name="dizhi" value="dizhi" />
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>园区介绍</td>
+    			<td>
+                 <textarea id="jieshao" name="jieshao" style="height:180px; width:100%">
+                 <?php echo $info['jieshao']?>
+                  </textarea>
+    			</td>
+    		</tr>
+    		
+    		
+    		
+    		<tr>
+    			<td>入驻企业</td>
+    			<td>
+	    			<textarea id="ruzhuqiye" name='ruzhuqiye' style="height:180px; width:100%"><?php echo $info['ruzhuqiye']?> </textarea>
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>园区政策</td>
+    			<td>
+	    			<textarea id="zhengce" name="zhengce" style="height:180px; width:100%"> <?php echo $info['zhengce']?></textarea>
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>配套</td>
+    			<td>
+	    			<textarea id="peitao" name='peitao' style="height:180px; width:100%"> <?php echo $info['peitao']?></textarea>
+    			</td>
+    		</tr>
+    	</table>
+    	
+    	<div class="form-item cf">
+    	<input type="hidden" name="id" value="<?php echo $info['id']?>">
+            <button class="btn submit-btn "  type="submit">确 定</button>
+            <a class="btn btn-return" href="JavaScript:history.go(-1);">返 回</a>
+        </div>
+        
+        </form>
+    
+    </div>
+</div>
+</block>
+
+<block name="script">
+
+<link href="__PUBLIC__/Uedietor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="__PUBLIC__/Uedietor/third-party/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Uedietor/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Uedietor/umeditor.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Uedietor/lang/zh-cn/zh-cn.js"></script>
+
+
+<script type="text/javascript">
+    //实例化编辑器
+    var um = UM.getEditor('jieshao');
+    var zc = UM.getEditor('zhengce');
+    var zc = UM.getEditor('ruzhuqiye');
+    var zc = UM.getEditor('peitao');
+    
+    
+    function copyimg(o){
+    	 //取出当前行
+    	    var current_tr = $(o).parent().parent();
+    	    if($(o).html()=='[+]'){
+    	            //自我复制
+    	            var new_tr  = current_tr.clone();//克隆当前行，
+    	            //克隆出的新行，把里面的a标签的内容，变成[-]
+    	            new_tr.find('a').html('[-]');
+    	            //把新行放到当前行的后面
+    	             current_tr.after(new_tr);
+    	    }else{
+    	            //自我删除当前行
+    	            current_tr.remove();
+    	    }
+
+    	}
+    
+ 
+	function getDiqu(v){
+		//ajax 请求当前下的区域数据
+		$.ajax({
+			type:'post',
+			url:"<?php echo U('Think/getQuyu')?>",
+			data:'id='+v+'&quyu_id='+<?php echo $info['quyu_id']?>,
+			success:function(msg){
+				$("#quyu").html(msg);
+			}
+		});
+		
+		
+	}
+
+
+
+</script>
+
+
+
+</block>

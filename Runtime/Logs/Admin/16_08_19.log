@@ -1,0 +1,540 @@
+[ 2016-08-19T00:06:20+08:00 ] 127.0.0.1 /admin.php?s=/Think/louyuadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002812s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003687s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with that of Admin\Controller\AdminController::lists() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0036s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Think/louyuadd%' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_category_tree` [ RunTime:0.0035s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 39 )  [ RunTime:0.0002s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 71  )  [ RunTime:0.0002s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 77 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000181s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000248s ]
+NOTIC: [8] Undefined variable: meta_title C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\1e74059f1092e6d72ee7e836fcdd2a2a.php 第 5 行.
+NOTIC: [8] Undefined variable: model C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\1e74059f1092e6d72ee7e836fcdd2a2a.php 第 105 行.
+NOTIC: [8] Undefined variable: model C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\1e74059f1092e6d72ee7e836fcdd2a2a.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001468s ]
+
+[ 2016-08-19T00:06:45+08:00 ] 127.0.0.1 /admin.php?s=/Think/louyuadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002560s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000852s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with that of Admin\Controller\AdminController::lists() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0031s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Think/louyuadd%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_category_tree` [ RunTime:0.0031s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 39 )  [ RunTime:0.0001s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 71  )  [ RunTime:0.0001s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 77 )  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] Undefined variable: meta_title C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\1e74059f1092e6d72ee7e836fcdd2a2a.php 第 5 行.
+NOTIC: [8] Undefined variable: model C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\1e74059f1092e6d72ee7e836fcdd2a2a.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016969s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017037s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000905s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000973s ]
+
+[ 2016-08-19T00:18:04+08:00 ] 127.0.0.1 /admin.php?s=/Config/group.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002191s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000804s ]
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0031s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Config/group%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `qifan_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`url` FROM `qifan_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_config` [ RunTime:0.0034s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `qifan_config` WHERE `status` = 1 AND `group` = 1 ORDER BY sort  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000251s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022202s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001132s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001239s ]
+
+[ 2016-08-19T00:18:08+08:00 ] 127.0.0.1 /admin.php?s=/Model/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003511s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0027s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Model/index%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `qifan_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`url` FROM `qifan_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_model` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `qifan_model` WHERE `status` > -1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`name`,`title`,`extend`,`relation`,`need_pk`,`field_sort`,`field_group`,`attribute_list`,`attribute_alias`,`template_list`,`template_add`,`template_edit`,`list_grid`,`list_row`,`search_key`,`search_list`,`create_time`,`update_time`,`status`,`engine_type` FROM `qifan_model` WHERE `status` > -1 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019208s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000857s ]
+
+[ 2016-08-19T00:18:11+08:00 ] 127.0.0.1 /admin.php?s=/model/edit/id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002242s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002843s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000969s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001080s ]
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0031s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Model/edit%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 58 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT DISTINCT  `group` FROM `qifan_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`url` FROM `qifan_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_model` [ RunTime:0.0031s ]
+SQL: SELECT `id`,`name`,`title`,`extend`,`relation`,`need_pk`,`field_sort`,`field_group`,`attribute_list`,`attribute_alias`,`template_list`,`template_add`,`template_edit`,`list_grid`,`list_row`,`search_key`,`search_list`,`create_time`,`update_time`,`status`,`engine_type` FROM `qifan_model` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_attribute` [ RunTime:0.0038s ]
+SQL: SELECT `id`,`name`,`title`,`is_show` FROM `qifan_attribute` WHERE `model_id` = 11  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000223s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000294s ]
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 137 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+NOTIC: [8] Undefined index: group C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\4bc4913b407324fb4d494724d5710d65.php 第 163 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023528s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000817s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000890s ]
+
+[ 2016-08-19T00:18:14+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001742s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0034s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Attribute/index%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT DISTINCT  `group` FROM `qifan_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`url` FROM `qifan_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_attribute` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `qifan_attribute` WHERE `model_id` = 11 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `qifan_attribute` WHERE `model_id` = 11 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `qifan_model` [ RunTime:0.0040s ]
+SQL: SELECT `title` FROM `qifan_model` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024190s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000665s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000728s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001121s ]
+
+[ 2016-08-19T00:18:16+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/add/model_id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001485s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0044s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Attribute/add%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT DISTINCT  `group` FROM `qifan_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`url` FROM `qifan_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_model` [ RunTime:0.0033s ]
+SQL: SELECT `title`,`name`,`field_group` FROM `qifan_model` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000222s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000296s ]
+NOTIC: [8] Undefined index: id C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 89 行.
+SQL: SELECT `title` FROM `qifan_model` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: name C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 106 行.
+NOTIC: [8] Undefined index: title C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 112 行.
+NOTIC: [8] Undefined index: field C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 127 行.
+NOTIC: [8] Undefined index: extra C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 134 行.
+NOTIC: [8] Undefined index: value C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 141 行.
+NOTIC: [8] Undefined index: remark C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 147 行.
+NOTIC: [8] Undefined index: validate_rule C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 190 行.
+NOTIC: [8] Undefined index: error_info C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 196 行.
+NOTIC: [8] Undefined index: auto_rule C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 222 行.
+NOTIC: [8] Undefined index: id C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\5de3ad3cb2669b692ef5954e1c687884.php 第 241 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023578s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023653s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001354s ]
+
+[ 2016-08-19T00:18:26+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001977s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Attribute/update%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 63 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT DISTINCT  `group` FROM `qifan_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`url` FROM `qifan_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_attribute` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `qifan_attribute` WHERE `name` = 'create_time' AND `model_id` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `qifan_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('create_time','创建时间','num','int(10) UNSIGNED NOT NULL','','','','1','0','regex','','','3','function','','3','0','11','1','1471537106','1471537106') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `qifan_model` [ RunTime:0.0030s ]
+SQL: SELECT `name`,`extend` FROM `qifan_model` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0001s ]
+SQL:                 SHOW TABLES LIKE 'qifan_louyu'; [ RunTime:0.0026s ]
+SQL:                 ALTER TABLE `qifan_louyu`
+ADD COLUMN `create_time`  int(10) UNSIGNED NOT NULL  COMMENT '创建时间'; [ RunTime:0.0135s ]
+SQL: SELECT `name` FROM `qifan_model` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_action` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `qifan_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_action_log` [ RunTime:0.0031s ]
+SQL: INSERT INTO `qifan_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','2130706433','attribute','86','1471537106','操作url：/admin.php?s=/Attribute/update.html') [ RunTime:0.0006s ]
+
+[ 2016-08-19T00:18:28+08:00 ] 127.0.0.1 /admin.php?s=/Attribute/index/model_id/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001869s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0005s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Attribute/index%' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `qifan_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT DISTINCT  `group` FROM `qifan_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`url` FROM `qifan_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `qifan_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_attribute` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `qifan_attribute` WHERE `model_id` = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `qifan_attribute` WHERE `model_id` = 11 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000210s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `qifan_model` [ RunTime:0.0033s ]
+SQL: SELECT `title` FROM `qifan_model` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023969s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024184s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000760s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000830s ]
+
+[ 2016-08-19T00:18:31+08:00 ] 127.0.0.1 /admin.php?s=/Think/yuanqulists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002338s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002954s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with that of Admin\Controller\AdminController::lists() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Think/yuanqulists%' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_model` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `qifan_model` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `extend` FROM `qifan_model` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_attribute` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `qifan_attribute` WHERE `model_id` = 10  [ RunTime:0.0010s ]
+SQL: SELECT `field_sort`,`attribute_list`,`attribute_alias` FROM `qifan_model` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_yuanqu` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`title`,`create_time` FROM `qifan_yuanqu`  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000757s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000828s ]
+
+[ 2016-08-19T00:18:32+08:00 ] 127.0.0.1 /admin.php?s=/Think/louyuadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002196s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with that of Admin\Controller\AdminController::lists() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0027s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Think/louyuadd%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_category_tree` [ RunTime:0.0036s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 39 )  [ RunTime:0.0001s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 71  )  [ RunTime:0.0001s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 77 )  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+NOTIC: [8] Undefined variable: meta_title C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\1e74059f1092e6d72ee7e836fcdd2a2a.php 第 5 行.
+NOTIC: [8] Undefined variable: model C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\1e74059f1092e6d72ee7e836fcdd2a2a.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017185s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017261s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001117s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001227s ]
+
+[ 2016-08-19T00:19:39+08:00 ] 127.0.0.1 /admin.php?s=/Think/louyuadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001836s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with that of Admin\Controller\AdminController::lists() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Think/louyuadd%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_category_tree` [ RunTime:0.0044s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 39 )  [ RunTime:0.0001s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 71  )  [ RunTime:0.0001s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 77 )  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000198s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+NOTIC: [8] Undefined variable: meta_title C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\1e74059f1092e6d72ee7e836fcdd2a2a.php 第 5 行.
+NOTIC: [8] Undefined variable: model C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Runtime\Cache\Admin\1e74059f1092e6d72ee7e836fcdd2a2a.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016472s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016538s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000854s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000927s ]
+
+[ 2016-08-19T00:19:42+08:00 ] 127.0.0.1 /admin.php?s=/Think/getQuyu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with that of Admin\Controller\AdminController::lists() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Think/getQuyu%' ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_category_tree` [ RunTime:0.0031s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 40 )  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 308 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000999s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001063s ]
+
+[ 2016-08-19T00:21:18+08:00 ] 127.0.0.1 /admin.php?s=/Think/louyuadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002495s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000791s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with that of Admin\Controller\AdminController::lists() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0027s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Think/louyuadd%' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `qifan_category_tree` [ RunTime:0.0051s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 39 )  [ RunTime:0.0001s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 71  )  [ RunTime:0.0001s ]
+SQL: SELECT `title`,`id`,`pid` FROM `qifan_category_tree` WHERE ( pid = 77 )  [ RunTime:0.0001s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1033 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1034 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1038 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1039 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1033 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1034 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1038 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1039 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1033 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1034 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1038 行.
+NOTIC: [8] Use of undefined constant savename - assumed 'savename' C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Common\Common\function.php 第 1039 行.
+SQL: SHOW COLUMNS FROM `qifan_louyu` [ RunTime:0.0036s ]
+SQL: INSERT INTO `qifan_louyu` (`city_id`,`zujin_id`,`mianji_id`,`zushouleixing`,`title`,`wuye`,`zhuangxiu`,`louceng`,`peitao`,`kaifashang`,`dizhi`,`lianxidianhua`,`jieshao`,`zhoubianpeitao`,`diliweizhi`,`create_time`,`xiangce`,`thumb`) VALUES ('40','74','80','1','这是楼宇经济的第一条测试信息','北京盛大物业有限公司','精装修','3','不知所云','绿地集团','北京市朝阳路','18616250932','这是一个非常好的地方啊<p></p>','发生地方的萨芬<p></p>','发生大发<p></p>','1471537278','[\"Uploads\\/.\\/Uploads\\/2016-08-19\\/57b5e07deba2c.jpg\",\"Uploads\\/.\\/Uploads\\/2016-08-19\\/57b5e07dee909.jpg\",\"Uploads\\/.\\/Uploads\\/2016-08-19\\/57b5e07def1a6.png\"]','[\"Uploads\\/Uploads\\/thumb\\/57b5e07deba2c.jpg\",\"Uploads\\/Uploads\\/thumb\\/57b5e07dee909.jpg\",\"Uploads\\/Uploads\\/thumb\\/57b5e07def1a6.png\"]') [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019271s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019371s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000617s ]
+
+[ 2016-08-19T00:21:19+08:00 ] 127.0.0.1 /admin.php?s=/Think/yuanqulists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001878s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with that of Admin\Controller\AdminController::lists() C:\Users\Administrator\Zend\workspaces\DefaultWorkspace\qifan\Application\Admin\Controller\ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `qifan_menu` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`title`,`url` FROM `qifan_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT `pid` FROM `qifan_menu` WHERE ( pid !=0 AND url like '%Think/yuanqulists%' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `qifan_model` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `qifan_model` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `extend` FROM `qifan_model` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_attribute` [ RunTime:0.0028s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `qifan_attribute` WHERE `model_id` = 10  [ RunTime:0.0003s ]
+SQL: SELECT `field_sort`,`attribute_list`,`attribute_alias` FROM `qifan_model` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `qifan_yuanqu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`create_time` FROM `qifan_yuanqu`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014968s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000912s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000982s ]
+
