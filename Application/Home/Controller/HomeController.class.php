@@ -114,5 +114,9 @@ class HomeController extends Controller {
 	    }
 	    return $model->getList($where, $page, $this->order, $this->pagesize);
 	}
+	protected function getDetailsById($modelName,$id){
+	    $model = D($modelName);
+	    return $model->getDetailsById($id);
+	}
 
 }
