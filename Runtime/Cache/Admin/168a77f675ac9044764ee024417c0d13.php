@@ -59,10 +59,10 @@
                                 </li>
 
                                 <li>
-                                    <a class="item" href="<?php echo (U($menu["url"])); ?>">楼宇经济</a>
+                                    <a class="item" href="<?php echo U('Think/louyulists')?>">楼宇经济</a>
                                 </li>
                                 <li>
-                                    <a class="item" href="<?php echo (U($menu["url"])); ?>">厂房租售</a>
+                                    <a class="item" href="<?php echo U('Think/newslist')?>">新闻中心</a>
                                 </li>
                                 
                                 <li>

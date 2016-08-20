@@ -344,13 +344,14 @@ class ThinkController extends AdminController {
 				$info = moreUploadImg('photo',1);
 				$xiangce = json_encode($info['yuantuUrl']);
 				$thumb = json_encode($info['thumbUrl']);
+				$data['xiangce'] = $xiangce;
+				$data['thumb'] = $thumb;
 			}
 			$data = $_POST;
 			$id = $_POST['id'];
 			unset($_POST['id']);
 			$data['create_time'] = time();
-			$data['xiangce'] = $xiangce;
-			$data['thumb'] = $thumb;
+			
 			$data['servers'] = preg_replace("#\\\u([0-9a-f]+)#ie", "iconv('UCS-2', 'UTF-8', pack('H4', '\\1'))", json_encode($_POST['servers']));
 			if(M('Yuanqu')->where("id = $id")->save($data)!==false){
 				$this->success('修改成功',U('yuanqulists'));exit;
@@ -372,23 +373,22 @@ class ThinkController extends AdminController {
 		}
 		
 	}
-	/*楼宇经济信息管理*/
-	public function louyulist(){
-		
+	/*楼宇经济信息管理,列表*/
+	public function louyulists(){
+		$list = M('Louyu')->field("id,title,create_time")->select();
+		$this->assign('list',$list);
+		$this->display();
 	}
 	
-	
+	/*楼宇经济信息管理,楼宇添加*/
 	public function louyuadd(){
 		//读取城市分类信息
 		$model = M('CategoryTree');
 		$citylist = $model->field("title,id,pid")->where("pid = 39")->select();
 		$this->assign('citylist',$citylist);
-		//读取租金分类信息
-		$zujinlist = $model->field("title,id,pid")->where("pid = 71 ")->select();
-		$this->assign('zujinlist',$zujinlist);
-		//读取面积分类信息
-		$mianjilist = $model->field("title,id,pid")->where("pid = 77")->select();
-		$this->assign('mianjilist',$mianjilist);
+		//读取类型
+		$typelist = $model->field("title,id,pid")->where("pid = 95")->select();
+		$this->assign('typelist',$typelist);
 		
 		if(IS_POST){
 			/*多图片上传*/
@@ -409,7 +409,127 @@ class ThinkController extends AdminController {
 		$this->display();
 		
 	}
+	/*楼宇经济修改*/
+	public function louyuedit(){
+		$model = M('CategoryTree');
+		$citylist = $model->field("title,id,pid")->where("pid = 39")->select();
+		$this->assign('citylist',$citylist);
+		//读取类型
+		$typelist = $model->field("title,id,pid")->where("pid = 95")->select();
+		$this->assign('typelist',$typelist);
+		
+		//获取id编号
+		$id = $_GET['id']+0;
+		//查询对应的数据
+		$info = M('Louyu')->where("id = $id")->find();
+		$this->assign('info',$info);
+		//将服务信息转成数组
+
+		$thumb   = json_decode($info['thumb']);
+		$this->assign('thumb',$thumb);
+		if(IS_POST){
+			if(!empty($_FILES)){
+				$info = moreUploadImg('photo',1);
+				$xiangce = json_encode($info['yuantuUrl']);
+				$thumb = json_encode($info['thumbUrl']);
+				$data['xiangce'] = $xiangce;
+				$data['thumb'] = $thumb;
+			}
+			$data = $_POST;
+			
+			$id = $_POST['id'];
+			unset($_POST['id']);
+			$data['create_time'] = time();
+			if(M('Louyu')->where("id = $id")->save($data)!==false){
+				$this->success('修改成功',U('louyulists'));exit;
+			}else{
+				$this->error('修改失败');
+			}
+			
+		}
+		
+		$this->display();
+		
+	}
+	public function louyudel(){
+		$id = $_GET['id']+0;
+		if(M('Louyu')->where("id = $id")->delete()!==false){
+			$this->success('删除成功',U('yuanqulists'));exit;
+		}else{
+			$this->error('参数错误');
+		}
+		
+	}
 	
+	/*新闻管理中心*/
+	public function newslist(){
+		//读取新闻分来的数据
+		$typelist = M('CategoryTree')->field("id,title,pid")->where("pid = 86")->select();
+		$this->assign('typelist',$typelist);
+		//获取条件
+		$type_id = $_GET['id']+0;
+		
+		//读取新闻列表,查询所有信息
+		if($type_id==0){
+			$newslist = M('News')->select();
+		}else{
+			$newslist = M('News')->where("lanmu_id = $type_id ")->select();
+		}
+		$this->assign('newslist',$newslist);
+		$this->display();
+	}
+	//添加新闻
+	public function newsadd(){
+		//读取新闻分来的数据
+		$typelist = M('CategoryTree')->field("id,title,pid")->where("pid = 86")->select();
+		$this->assign('typelist',$typelist);
+		
+		if(IS_POST){
+			$data = $_POST;
+			if(empty($data['yueduliang'])){
+				$data['yueduliang'] = rand(100,300);
+			}
+			$data['create_time'] = time();
+			if(M('News')->add($data)!==false){
+				$this->success('添加成功',U('newslist'));exit;
+				
+			}else{
+				$this->error('系统繁忙，请稍后再试');
+			}
+			
+		}
+		$this->display();
+	
+	}
+	//查看新闻信息
+	public function newsedit(){
+		$typelist = M('CategoryTree')->field("id,title,pid")->where("pid = 86")->select();
+		$this->assign('typelist',$typelist);
+		$id = $_GET['id']+0;
+		$info = M('News')->where("id = $id")->find();
+		$this->assign('info',$info);
+		if(IS_POST){
+			$id = $_POST['id'];
+			$data = $_POST;
+			unset($data['id']);
+			if(empty($data['yueduliang'])){
+				$data['yueduliang'] = rand(100,300);
+			}
+			$data['create_time'] = time();
+			if(M('News')->where("id = $id")->save($data)!==false){
+				$this->success('修改成功',U('newslist'));exit;
+				
+			}else{
+				$this->error('系统繁忙，请稍后再试');
+			}
+		}
+		$this->display();
+	}
+	
+	/*土地信息管理*/
+	public function tudilist(){
+		$this->display();
+	}
 	
 	
 }

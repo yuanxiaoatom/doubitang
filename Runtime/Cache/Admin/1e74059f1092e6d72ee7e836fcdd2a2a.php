@@ -59,10 +59,10 @@
                                 </li>
 
                                 <li>
-                                    <a class="item" href="<?php echo U('Think/louyuadd')?>">楼宇经济</a>
+                                    <a class="item" href="<?php echo U('Think/louyulists')?>">楼宇经济</a>
                                 </li>
                                 <li>
-                                    <a class="item" href="<?php echo (U($menu["url"])); ?>">厂房租售</a>
+                                    <a class="item" href="<?php echo U('Think/newslist')?>">新闻中心</a>
                                 </li>
                                 
                                 <li>
@@ -136,34 +136,19 @@
     		</tr>
     		
     		<tr>
-    			<td>选择租金</td>
+    			<td>选择类型</td>
     			<td>
-    			<select name="zujin_id">
-    				<option value="">请选择功能</option>
-    				<?php foreach($zujinlist as $v){?>
-    				
-    					<option value="<?php echo $v['id']?>"><?php echo $v['title']?></option>
-    				<?php } ?>
-    			</select>
+    			<select name="leixing_id">
     			
-    			</td>
+    				<option>选择类型</option>
+    				<?php foreach($typelist as $v){?>
+    				<option value="<?php echo $v['id']?>" ><?php echo $v['title']?></option>
+    				
+    				<?php } ?>
+    			</select></td>
     		
     		</tr>
-    		
-    		<tr>
-    			<td>选择面积</td>
-    			<td>
-    			
-    			<select name="mianji_id">
-    				<option value="">请选择类型</option>
-    				<?php foreach($mianjilist as $v){?>
-    					<option value="<?php echo $v['id']?>"><?php echo $v['title']?></option>
-    				<?php } ?>
-    			</select>
-    				
-    			</td>
-    		</tr>
-    		
+
     		<tr>
     			<td>租售类型</td>
     			<td>
@@ -179,6 +164,24 @@
     			<td width="10%">标题：</td>
     			<td><input type="text" name="title"></td>
     		</tr>
+    		
+    		<tr>
+    			<td>租金</td>
+    			<td>
+    				<input type="text" placeholder="请输入数字 " name="zujjin">元㎡/天
+    			</td>
+    		
+    		</tr>
+    		
+    		<tr>
+    			<td>选择面积</td>
+    			<td>
+    			
+    			<input type="text" placeholder="请输入数字 " name="mianji">平米
+    				
+    			</td>
+    		</tr>
+    		
     		<tr>
     			<td>相册</td>
     			<td>

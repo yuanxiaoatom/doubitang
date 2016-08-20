@@ -59,7 +59,7 @@
                                 </li>
 
                                 <li>
-                                    <a class="item" href="<?php echo (U($menu["url"])); ?>">楼宇经济</a>
+                                    <a class="item" href="<?php echo U('Think/louyulists')?>">楼宇经济</a>
                                 </li>
                                 <li>
                                     <a class="item" href="<?php echo (U($menu["url"])); ?>">厂房租售</a>
@@ -326,6 +326,7 @@
     	</table>
     	
     	<div class="form-item cf">
+    	
     	<input type="hidden" name="id" value="<?php echo $info['id']?>">
             <button class="btn submit-btn "  type="submit">确 定</button>
             <a class="btn btn-return" href="JavaScript:history.go(-1);">返 回</a>
