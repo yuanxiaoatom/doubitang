@@ -17,4 +17,10 @@ class CategoryTreeModel extends Model
             ->where('pid = ' . $pid)
             ->select();
     }
+    public function getTitleById($id,$pid) {
+        return $this->field('title')
+        ->where('id = '.$id)
+        ->where('pid = '.$pid)
+        ->find();
+    }
 }

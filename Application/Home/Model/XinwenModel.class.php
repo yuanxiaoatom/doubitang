@@ -12,7 +12,7 @@ class XinwenModel extends Model
      * @param string $where            
      * @param number $count            
      */
-    public function getXinwenTitle($where = '', $order = array('id'=>'desc'), $count = 8)
+    public function getTitle($where = '', $order = array('id'=>'desc'), $count = 8)
     {
         return $this->field(array(
             'title',
@@ -39,7 +39,7 @@ class XinwenModel extends Model
      *            每页记录数量
      * @return array
      */
-    public function getXinwenList($where = '', $page = 1, $order = array('id'=>'desc'), $pagesize = 10)
+    public function getList($where = '', $page = 1, $order = array('id'=>'desc'), $pagesize = 10)
     {
         $count = $this->getXinwenCount($where);
         $list['countpage'] = ceil($count / $pagesize);
@@ -64,7 +64,7 @@ class XinwenModel extends Model
      * @param unknown $id            
      * @return mixed|boolean|NULL|string|unknown|object
      */
-    public function getXinwenById($id)
+    public function getDetailsById($id)
     {
         return $this->field()
             ->where()
