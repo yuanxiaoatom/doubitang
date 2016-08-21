@@ -24,4 +24,9 @@ class UserCenterController extends HomeController{
         $this->assign('userInfo',$this->userInfo);
         $this->display();
     }
+    public function delete(){
+        //$data['id'] = 3;
+        $data['title'] = 'charu测试';
+        echo insert('Yuanqu',$data);
+    }
 }
