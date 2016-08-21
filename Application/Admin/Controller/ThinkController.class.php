@@ -473,7 +473,7 @@ class ThinkController extends AdminController {
 		if($type_id==0){
 			$newslist = M('News')->select();
 		}else{
-			$newslist = M('News')->where("lanmu_id = $type_id ")->select();
+			$newslist = M('News')->where("leixing_id = $type_id ")->select();
 		}
 		$this->assign('newslist',$newslist);
 		$this->display();
