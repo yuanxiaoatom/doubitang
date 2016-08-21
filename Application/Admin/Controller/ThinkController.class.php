@@ -528,6 +528,8 @@ class ThinkController extends AdminController {
 	
 	/*土地信息管理*/
 	public function tudilist(){
+		
+		
 		$this->display();
 	}
 	
