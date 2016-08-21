@@ -71,11 +71,31 @@ class HomeController extends Controller {
 	protected function getTitle($modelName,$pid){
 	    $leixingmodel = D('CategoryTree');
 	    $model = D($modelName);
-	    $idList = $leixingmodel->getIdByPid($pid);	    
-	    foreach ($idList as $v) {
-	        $list[$v['id']] = $model->getTitle('leixing_id =' . $v['id'],$this->order, $this->count);
-	    }
-	    $list['total'] = $model->getTitle('',$this->order, $this->count);
+	    $idList = $leixingmodel->getIdByPid($pid);
+	   if(method_exists ($model ,'getTitle' )) {
+	       foreach ($idList as $v) {
+	           $list[$v['id']] = $model->getTitle('leixing_id =' . $v['id'],$this->order, $this->count);
+	       }
+	       $list['total'] = $model->getTitle('',$this->order, $this->count);
+	   }else{
+	       $list[$v['id']] = $model->field(array(
+            'title',
+            'id',
+            'thumb'
+            ))
+            ->where('leixing_id =' . $v['id'])
+            ->order($this->order)
+            ->limit($this->count)
+            ->select();
+	       $list['total'] = $model->field(array(
+            'title',
+            'id',
+            'thumb'
+            ))
+            ->where()
+            ->order($this->order)
+            ->limit($this->count);
+	   }
 	    return $list;
 	    
 	}
@@ -85,7 +105,7 @@ class HomeController extends Controller {
 	 * @param unknown $request
 	 */
 	protected  function getList($modelName,$request){
-	    $model = D($modelName);
+
 	    $categorymodel = D('CategoryTree');
 	    $city_id = isset($request['city_id']) ? $request['city_id'] : 0;
 	    $gongneng_id = isset($request['gongneng_id']) ? $request['gongneng_id'] : 0;
@@ -122,7 +142,27 @@ class HomeController extends Controller {
 	        $arr = explode('-',$str);
 	        $where .= ' AND `mianji` > '.$arr[0].' AND `mianji` < '.$arr[1];
 	    }
-	    return $model->getList($where, $page, $this->order, $this->pagesize);
+	    $model = D($modelName);
+	    if(method_exists ($model ,'getList' )){
+	       return $model->getList($where, $page, $this->order, $this->pagesize);
+	    }else{
+	        $count = $this->field()
+            ->where($where)
+            ->count();
+	        $list['countpage'] = ceil($count / $this->pagesize);
+	        $limit = ($page - 1) * $this->pagesize . ',' . $this->pagesize;
+	        if ($page < 1) {
+	            $page = 1;
+	        } elseif ($page > $list['countpage']) {
+	            $page = $list['countpage'];
+	        }
+	        $list['list'] = $this->field()
+	        ->where($where)
+	        ->order($this->order)
+	        ->limit($limit)
+	        ->select();	        
+	        return $list;
+	    }
 	}
 	/**
 	 * 根据id获取对应model数据的详情
@@ -131,6 +171,11 @@ class HomeController extends Controller {
 	 */
 	protected function getDetailsById($modelName,$id){
 	    $model = D($modelName);
-	    return $model->getDetailsById($id);
+	    if(method_exists ($model ,'getDetailsById' )){
+	        return $model->getDetailsById($id);
+	    }
+	    return $model->field()
+            ->where()
+            ->find($id);
 	}
 }

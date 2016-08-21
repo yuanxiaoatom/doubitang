@@ -1058,3 +1058,50 @@ function infinite($list,$parent_id=0,$deep=0){
 	}
 	return $arr;
 }
+/**
+ * 插入数据
+ * @param unknown $tableName
+ * @param array $data
+ * @return mixed|boolean|unknown|string
+ */
+function insert($tableName,array $data){
+    return M($tableName)->data($data)->add();
+}
+/**
+ * 修改数据
+ * @param unknown $tableName
+ * @param array $data
+ *                 如果$where为空，则必须包含主键
+ * @param array $where
+ *                 条件，键值对的一维数组
+ */
+function update($tableName,array $data,array $where = array()){
+    $model = M($tableName);
+    if(!empty($where)){
+        $wherestr = '1 = 1';
+        foreach ($where as $k => $v){
+            $wherestr .= ' AND '.$k.' = '.$v;
+        }
+        return $model->where($wherestr)->save($data);
+    }
+    return $model->save($data);
+}
+/**
+ * 删除数据
+ * @param unknown $tableName
+ * @param array $data
+ *                 如果$where为空，则必须包含主键
+ * @param array $where
+ *                 条件，键值对的一维数组
+ */
+function delete($tableName,array $where = array()){
+    if(empty($where)){
+        return false;
+    }
+    $wherestr = '1 = 1';
+    foreach ($where as $k => $v){
+        $wherestr .= ' AND '.$k.' = '.$v;
+    }
+    $model = M($tableName);
+    return $model->where($wherestr)->delete();
+}
