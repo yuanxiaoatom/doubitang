@@ -70,7 +70,7 @@ class IndexController extends HomeController
     {
         $list = $this->getList('Tudi', $_GET);
         $this->assign('list', $list);
-        $this->display();
+        $this->display(); 
     }
 
     public function louyu()
