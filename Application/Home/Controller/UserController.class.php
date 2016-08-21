@@ -15,15 +15,9 @@ use User\Api\UserApi;
  * 包括用户中心，用户登录及注册
  */
 class UserController extends HomeController {
-
-	/* 用户中心首页 */
-	public function index(){
-		
-	}
-
 	/* 注册页面 */
 	public function register($username = '', $password = '', $repassword = '', $email = '', $verify = ''){
-        if(!C('USER_ALLOW_REGISTER')){
+	    if(!C('USER_ALLOW_REGISTER')){
             $this->error('注册已关闭');
         }
 		if(IS_POST){ //注册用户

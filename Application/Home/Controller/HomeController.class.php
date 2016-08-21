@@ -33,6 +33,11 @@ class HomeController extends Controller {
      * @var array $order
      */
     protected  $order = array('id' => 'desc');
+    /**
+     * 用户登录之后的用户信息
+     * @var unknown
+     */
+    protected $userInfo = array();
 
 	/* 空操作，用于输出404页面 */
 	public function _empty(){
@@ -53,7 +58,11 @@ class HomeController extends Controller {
 	/* 用户登录检测 */
 	protected function login(){
 		/* 用户登录检测 */
-		is_login() || $this->error('您还没有登录，请先登录！', U('User/login'));
+	    if(is_login()){
+	        $this->userInfo = session('userInfo');
+	    }else{
+	        $this->error('您没有权限访问，请先登陆',U('User/login'));
+	    }
 	}
 	/**
 	 * 根据模型名字获取对应表中title数据
@@ -115,9 +124,13 @@ class HomeController extends Controller {
 	    }
 	    return $model->getList($where, $page, $this->order, $this->pagesize);
 	}
+	/**
+	 * 根据id获取对应model数据的详情
+	 * @param unknown $modelName
+	 * @param unknown $id
+	 */
 	protected function getDetailsById($modelName,$id){
 	    $model = D($modelName);
 	    return $model->getDetailsById($id);
 	}
-
 }

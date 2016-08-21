@@ -184,7 +184,7 @@ abstract class Controller {
      * @return void
      */
     protected function error($message='',$jumpUrl='',$ajax=false) {
-        $this->dispatchJump($message,0,$jumpUrl,$ajax);
+        $this->dispatchJump($message,0,$jumpUrl,$ajax);exit;
     }
 
     /**
@@ -196,7 +196,7 @@ abstract class Controller {
      * @return void
      */
     protected function success($message='',$jumpUrl='',$ajax=false) {
-        $this->dispatchJump($message,1,$jumpUrl,$ajax);
+        $this->dispatchJump($message,1,$jumpUrl,$ajax);exit;
     }
 
     /**

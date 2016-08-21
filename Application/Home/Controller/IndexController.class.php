@@ -22,7 +22,9 @@ class IndexController extends HomeController
      */
     public function index()
     {
-        
+        //用户信息，未登录为空
+        $userInfo = $this->userInfo;
+        $this->assign('userInfo ', $userInfo );
         // 读取栏目列表数据
         $channel = D('Channel')->field("title,url")
             ->order('sort asc')

@@ -65,6 +65,7 @@ class MemberModel extends Model{
     public function logout(){
         session('user_auth', null);
         session('user_auth_sign', null);
+        session('userInfo',null);
     }
 
     /**
@@ -87,7 +88,7 @@ class MemberModel extends Model{
             'username'        => get_username($user['uid']),
             'last_login_time' => $user['last_login_time'],
         );
-
+        session('userInfo',$user);
         session('user_auth', $auth);
         session('user_auth_sign', data_auth_sign($auth));
 
