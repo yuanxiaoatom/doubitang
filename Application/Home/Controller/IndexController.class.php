@@ -31,8 +31,8 @@ class IndexController extends HomeController
         $this->display();
         exit();
         // 新闻
-        $xinwen = $this->getTitle('Xinwen', 60);
-        $this->assign('xinwen', $xinwen);  
+        $news = $this->getTitle('News', 60);
+        $this->assign('news', $news);  
         // 首页产业园区数据
         $yuanqu= $this->getTitle('Yuanqu', 60);
         $this->assign('yuanqu', $yuanqu);       
@@ -58,37 +58,45 @@ class IndexController extends HomeController
         $this->assign('list', $list);
         $this->display();
     }
-    // 厂房租售
+    /**
+     * 厂房列表
+     */
     public function rental()
     {
         $list = $this->getList('Changfang', $_GET);
         $this->assign('list', $list);
         $this->display();      
     }
-
+    /**
+     * 土地列表
+     */
     public function tudi()
     {
         $list = $this->getList('Tudi', $_GET);
         $this->assign('list', $list);
         $this->display(); 
     }
-
+    /**
+     * 楼宇列表
+     */
     public function louyu()
     {
         $list = $this->getList('Louyu', $_GET);
         $this->assign('list', $list);
         $this->display();
     }
-
-    /* 新闻中心 */
+    /**
+     * 新闻列表
+     */
     public function news()
     {
-        $list = $this->getList('Xinwen', $_GET);
+        $list = $this->getList('News', $_GET);
         $this->assign('list', $list);
         $this->display();
     }
-
-    /* 留言板 */
+    /**
+     * 留言列表
+     */
     public function message()
     {
         $list = $this->getList('Liuyuan', $_GET);
@@ -96,7 +104,9 @@ class IndexController extends HomeController
         $this->display();
     }
 
-    /* 服务 */
+    /**
+     * 服务列表
+     */
     public function server()
     {
         $list = $this->getList('Fuwu', $_GET);
@@ -104,7 +114,9 @@ class IndexController extends HomeController
         $this->display();
     }
 
-    /* 税务规划 */
+    /**
+     * 税务规划列表
+     */
     public function taxation()
     {
         $list = $this->getList('Suiwu', $_GET);

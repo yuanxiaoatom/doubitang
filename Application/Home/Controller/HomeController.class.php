@@ -66,6 +66,7 @@ class HomeController extends Controller {
 	    foreach ($idList as $v) {
 	        $list[$v['id']] = $model->getTitle('leixing_id =' . $v['id'],$this->order, $this->count);
 	    }
+	    $list['total'] = $model->getTitle('',$this->order, $this->count);
 	    return $list;
 	    
 	}

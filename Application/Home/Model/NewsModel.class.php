@@ -3,7 +3,7 @@ namespace Home\Model;
 
 use Think\Model;
 
-class XinwenModel extends Model
+class NewsModel extends Model
 {
 
     /**
