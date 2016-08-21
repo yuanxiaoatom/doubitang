@@ -10,6 +10,7 @@ namespace Home\Controller;
 
 use OT\DataDictionary;
 use Zend\Crypt\PublicKey\Rsa\PrivateKey;
+use Think\Controller;
 
 /**
  * 前台首页控制器
@@ -18,13 +19,20 @@ use Zend\Crypt\PublicKey\Rsa\PrivateKey;
 class IndexController extends HomeController
 {
     /**
+     * 构造函数，输出用户信息
+     */
+    public function __construct(){
+        parent::__construct();
+        //用户信息，未登录为空
+        $userInfo = $this->userInfo;
+        $this->assign('userInfo ', $userInfo );
+    }
+    /**
      * 首页
      */
     public function index()
     {
-        //用户信息，未登录为空
-        $userInfo = $this->userInfo;
-        $this->assign('userInfo ', $userInfo );
+
         // 读取栏目列表数据
         $channel = D('Channel')->field("title,url")
             ->order('sort asc')
