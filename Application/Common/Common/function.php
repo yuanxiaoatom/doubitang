@@ -952,7 +952,6 @@ function check_document_position($pos = 0, $contain = 0){
     if(empty($pos) || empty($contain)){
         return false;
     }
-
     //将两个参数进行按位与运算，不为0则表示$contain属于$pos
     $res = $pos & $contain;
     if($res !== 0){
@@ -1018,7 +1017,7 @@ function check_category_model($info){
 }
 
 /*上传多张图片*/
-function moreUploadImg($imgName,$isThumb=0){
+function moreUploadImg($imgName,$isThumb=0,$width=80,$height=80){
 	//定义文件根目录
 	$rootpath = './Uploads';
 	$upload = new \Think\Upload();// 实例化上传类
@@ -1035,7 +1034,7 @@ function moreUploadImg($imgName,$isThumb=0){
 			if($isThumb==1){
 				$image = new \Think\Image();
 				$image->open($thumbPath);
-				$image->thumb(80, 80,\Think\Image::IMAGE_THUMB_CENTER)->save('./Uploads/Uploads/thumb/'.$v[savename]);
+				$image->thumb($width, $height,\Think\Image::IMAGE_THUMB_CENTER)->save('./Uploads/Uploads/thumb/'.$v[savename]);
 				$url = 'Uploads/Uploads/thumb/'.$v[savename];
 				$thumbUrl[] = $url;
 			}
@@ -1065,7 +1064,7 @@ function infinite($list,$parent_id=0,$deep=0){
  * @return mixed|boolean|unknown|string
  */
 function insert($tableName,array $data){
-    return M($tableName)->data($data)->add();
+    return M($tableName)->add($data);
 }
 /**
  * 修改数据
@@ -1084,7 +1083,7 @@ function update($tableName,array $data,array $where = array()){
         }
         return $model->where($wherestr)->save($data);
     }
-    return $model->save($data);
+    return $model->data($data)->save();
 }
 /**
  * 删除数据

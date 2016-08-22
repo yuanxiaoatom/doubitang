@@ -291,28 +291,16 @@ class ThinkController extends AdminController {
 		$fields = get_model_attribute(10);
 		$this->assign('model', $model);
 		$this->meta_title = '列表'.$model['title'];
-		$list = M('Yuanqu')->field("id,title,create_time")->select();
+		
+		//读取新闻分来的数据
+		$typelist = $this->getType(60);
+		$this->assign('typelist',$typelist);
+		$leixing_id = $_GET['leixing_id']+0;
+		$list = $this->getList('Yuanqu',$leixing_id);
 		$this->assign('list',$list);
 		$this->display();
 	}
-	//获取区域
-	public function getQuyu(){
-		$id = I('post.id')+0;
-		$quyu_id = I('post.quyu_id');
-		$info =  M('CategoryTree')->field('title,id,pid')->where("pid = $id")->select();
-		$str = '';
-		$str .= '<select name="quyu_id" style="float:left; width:100px;">';
-		$str .= '<option value="">请选择区域</option>';
-		$selected = "";
-		foreach($info as $v){
-			if($v[id] ==$quyu_id){
-				$selected = "selected=selected";
-			}
-			$str .='<option value="'.$v['id'].'"'.$selected.'>'.$v['title'].'</option>';
-		}
-		$str .= '</select>';
-		echo $str;
-	}
+	
 	//修改
 	public function yuanquedit(){
 		//取出城市的数据
@@ -340,6 +328,7 @@ class ThinkController extends AdminController {
 		$this->assign('servers',$servers);
 		//修改
 		if(IS_POST){
+			$data = $_POST;
 			if(!empty($_FILES)){
 				$info = moreUploadImg('photo',1);
 				$xiangce = json_encode($info['yuantuUrl']);
@@ -347,7 +336,7 @@ class ThinkController extends AdminController {
 				$data['xiangce'] = $xiangce;
 				$data['thumb'] = $thumb;
 			}
-			$data = $_POST;
+			
 			$id = $_POST['id'];
 			unset($_POST['id']);
 			$data['create_time'] = time();
@@ -375,7 +364,12 @@ class ThinkController extends AdminController {
 	}
 	/*楼宇经济信息管理,列表*/
 	public function louyulists(){
-		$list = M('Louyu')->field("id,title,create_time")->select();
+		$typelist = $this->getType(95);
+		$this->assign('typelist',$typelist);
+		
+		$leixing_id = $_GET['leixing_id']+0;
+		
+		$list = $this->getList('Louyu',$leixing_id);
 		$this->assign('list',$list);
 		$this->display();
 	}
@@ -428,6 +422,7 @@ class ThinkController extends AdminController {
 		$thumb   = json_decode($info['thumb']);
 		$this->assign('thumb',$thumb);
 		if(IS_POST){
+			$data = $_POST;
 			if(!empty($_FILES)){
 				$info = moreUploadImg('photo',1);
 				$xiangce = json_encode($info['yuantuUrl']);
@@ -435,8 +430,6 @@ class ThinkController extends AdminController {
 				$data['xiangce'] = $xiangce;
 				$data['thumb'] = $thumb;
 			}
-			$data = $_POST;
-			
 			$id = $_POST['id'];
 			unset($_POST['id']);
 			$data['create_time'] = time();
@@ -468,13 +461,8 @@ class ThinkController extends AdminController {
 		$this->assign('typelist',$typelist);
 		//获取条件
 		$type_id = $_GET['id']+0;
-		
 		//读取新闻列表,查询所有信息
-		if($type_id==0){
-			$newslist = M('News')->select();
-		}else{
-			$newslist = M('News')->where("leixing_id = $type_id ")->select();
-		}
+		$newslist = $this->getList('News',$type_id);
 		$this->assign('newslist',$newslist);
 		$this->display();
 	}
@@ -528,10 +516,211 @@ class ThinkController extends AdminController {
 	
 	/*土地信息管理*/
 	public function tudilist(){
+		//读取栏目类型
+		$typelist = $this->getType(106);
+		$this->assign('typelist',$typelist);
+		$leixing_id = $_GET['leixing_id']+0;
+		$list = $this->getList('Tudi',$leixing_id);
+		$this->assign('list',$list);
+		$this->display();
+	}
+	public function tudiadd(){
+		//获取城市信息
+		$citylist = $this->getType(39);
+		$this->assign('citylist',$citylist);
+		//读取用途信息
+		$yongtulist = $this->getType(106);
+		$this->assign('yongtulist',$yongtulist);
+		if(IS_POST){
+			/*多图片上传*/
+			$data = $_POST;
+			$info = moreUploadImg('photo',1);
+			$xiangce = json_encode($info['yuantuUrl']);
+			$thumb = json_encode($info['thumbUrl']);
+			$data['create_time'] = time();
+			$data['xiangce'] = $xiangce;
+			$data['thumb'] = $thumb;
+			$data['update_time'] = time();
+			if(insert('Tudi', $data)){
+				$this->success('添加成功',U('Think/tudilist'));exit;
+			}else{
+				$this->error('系统繁忙，请稍后再试');
+			}
+		}
+		$this->display();
 		
+	}
+	public function tudiedit(){
+		$id = $_GET['id']+0;
+		//获取城市信息
+		$citylist = $this->getType(39);
+		$this->assign('citylist',$citylist);
+		//读取用途信息
+		$yongtulist = $this->getType(106);
+		$this->assign('yongtulist',$yongtulist);
+		//根据id查询一条数据
+		$info = M('Tudi')->where("id = $id")->find();
+		$this->assign("info",$info);
+		$thumb   = json_decode($info['thumb']);
+		$this->assign('thumb',$thumb);
+		if(IS_POST){
+			$data = $_POST;
+			if(!empty($_FILES)){
+				$info = moreUploadImg('photo',1);
+				$xiangce = json_encode($info['yuantuUrl']);
+				$thumb = json_encode($info['thumbUrl']);
+				$data['xiangce'] = $xiangce;
+				$data['thumb'] = $thumb;
+			}
+			
+			$id = $_POST['id'];
+			$data['update_time'] = time();
+			if(update('Tudi',$data)!==false){
+				$this->success('修改成功',U('tudilist'));exit;
+			}else{
+				$this->error('系统繁忙！');
+			}
+		}
+		$this->display();
+		
+	}
+	
+	public function tudidel(){
+		$id = $_GET['id']+0;
+		if(delete('Tudi',array('id'=>$id))!==false){
+			$this->success('删除成功',U('Think/tudilist'));exit;
+			
+		}else{
+			$this->error('删除失败');
+		}
+	}
+	/**
+	 * 厂房信息管理
+	 */
+	public function changfanglist(){
+		$leixing_id = $_GET['leixing_id']+0;
+		$typelist = $this->getType(130);
+		$this->assign('typelist',$typelist);
+		$list = $this->getList('Cangfang',$leixing_id);
+		$this->assign('list',$list);
+		$this->display();
+	}
+	public function changfangadd(){
+		//获取城市信息
+		$citylist = $this->getType(39);
+		$this->assign('citylist',$citylist);
+		//获取类型信息
+		$yongtulist = $this->getType(130);
+		$this->assign('yongtulist',$yongtulist);
+		
+		if(IS_POST){
+			/*多图片上传*/
+			$data = $_POST;
+			$info = moreUploadImg('photo',1);
+			$xiangce = json_encode($info['yuantuUrl']);
+			$thumb = json_encode($info['thumbUrl']);
+			$data['create_time'] = time();
+			$data['xiangce'] = $xiangce;
+			$data['thumb'] = $thumb;
+			$data['update_time'] = time();
+			$data['bianhao'] = 'CF'.uniqid();
+			if(insert('Cangfang', $data)){
+				$this->success('添加成功',U('Think/tudilist'));exit;
+			}else{
+				$this->error('系统繁忙，请稍后再试');
+			}
+		}
 		
 		$this->display();
 	}
 	
+	public function changfangedit(){
+		$id = $_GET['id']+0;
+		//获取城市信息
+		$citylist = $this->getType(39);
+		$this->assign('citylist',$citylist);
+		//获取类型信息
+		$yongtulist = $this->getType(130);
+		$this->assign('yongtulist',$yongtulist);
+		//根据id查询一条数据
+		$info = M('Cangfang')->where("id = $id")->find();
+		$this->assign("info",$info);
+		$thumb   = json_decode($info['thumb']);
+		$this->assign('thumb',$thumb);
+		if(IS_POST){
+			$id = $_POST['id'];
+			$data = $_POST;
+			if(!empty($_FILES)){
+				$info = moreUploadImg('photo',1);
+				$xiangce = json_encode($info['yuantuUrl']);
+				$thumb = json_encode($info['thumbUrl']);
+				$data['xiangce'] = $xiangce;
+				$data['thumb'] = $thumb;
+			}
+			if(update('Cangfang',$data)!==false){
+				$this->success('修改成功',U('changfanglist'));exit;
+			}else{
+				$this->error('系统繁忙！');
+			}
+		}
+		$this->display();
+	}
+	
+	public function changfangdel(){
+		$id = $_GET['id']+0;
+		if(delete('Cangfang',array('id'=>$id))!==false){
+			$this->success('删除成功',U('Think/tudilist'));exit;
+				
+		}else{
+			$this->error('删除失败');
+		}
+		
+	}
+	
+	
+	
+	
+	/**
+	 * 获取分类信息
+	 * @param unknown $pid
+	 * @return Ambigous <\Think\Model, \Think\Model>
+	 */
+	function getType($pid){
+		return M('CategoryTree')->field("id,title,pid")->where("pid = $pid")->select();
+	}
+	
+	/**
+	 * 获取地区的方法
+	 */
+	public function getQuyu(){
+		$id = I('post.id')+0;
+		$quyu_id = I('post.quyu_id');
+		$info =  M('CategoryTree')->field('title,id,pid')->where("pid = $id")->select();
+		$str = '';
+		$str .= '<select name="quyu_id" style="float:left; width:100px;">';
+		$str .= '<option value="">请选择区域</option>';
+		$selected = "";
+		foreach($info as $v){
+			if($v[id] ==$quyu_id){
+				$selected = "selected=selected";
+			}
+			$str .='<option value="'.$v['id'].'"'.$selected.'>'.$v['title'].'</option>';
+		}
+		$str .= '</select>';
+		echo $str;
+	}
+	/**
+	 * 获取类型的方法
+	 * @param unknown $tableName
+	 * @param number $leixing_id 类型id
+	 */
+	function getList($tableName,$leixing_id=0){
+		if(empty($leixing_id)){
+			return  M($tableName)->field("a.*,b.title as type_title")->join("a left join qifan_category_tree b on a.leixing_id = b.id")->order("a.create_time desc")->select();
+		}else{
+			return  M($tableName)->field("a.*,b.title as type_title")->join("a left join qifan_category_tree b on a.leixing_id = b.id")->where("a.leixing_id = $leixing_id")->order("a.create_time desc")->select();
+		}
+		
+	}
 	
 }

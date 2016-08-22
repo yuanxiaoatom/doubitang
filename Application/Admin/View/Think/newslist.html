@@ -42,7 +42,7 @@
                         </th>
                        
                        <th>标题</th>
-                       
+                       <th>所属分类</th>
                        <th>阅读量</th>
                        
                        <th>时间</th>
@@ -60,6 +60,7 @@
                    <tr>
                       <td><input class="ids" type="checkbox" value="<?php echo $v['id']?>" name="ids[]"></td>
                        <td><?php echo $v['title']?></td>
+                       <td><?php echo $v['type_title']?></td>
                        <td><?php echo $v['yueduliang']?></td>
                        <td><?php echo date('Y-m-d',$v['create_time'])?></td>
                        <td><a href="<?php echo U('Think/newsedit',array('id'=>$v['id']))?>">查看</a>/<a href="javascript:void(0);" onclick="del(<?php echo $v['id']?>)">删除</a></td>

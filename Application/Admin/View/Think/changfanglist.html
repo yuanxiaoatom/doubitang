@@ -3,23 +3,26 @@
 <block name="body">
     <!-- 标题栏 -->
     <div class="main-title">
-        <h2>[{$model['title']}] 列表</h2>
+        <h2>[土地] 列表</h2>
     </div>
 	<div class="cf">
 		<div class="fl">
 		<empty name="model.extend">
 			<div class="tools">
-				<a class="btn" href="{:U('yuanquadd?model='.$model['id'])}">新 增</a>
+				<a class="btn" href="{:U('changfangadd?model='.$model['id'])}">新 增</a>
 				<button class="btn ajax-post confirm" target-form="ids" url="{:U('del?model='.$model['id'])}">删 除</button>
 			</div>
 		</empty>
 		</div>
-		
 		<div style="clear:both"></div>
+		
+		
+		
+		
 		<div class="changfang">
 			<ul>
 			<?php foreach($typelist as $v){?>
-				<li><a href="<?php echo U('Think/yuanqulists',array('leixing_id'=>$v['id']))?>"><?php echo $v['title']?></a></li>
+				<li><a href="<?php echo U('Think/changfanglist',array('leixing_id'=>$v['id']))?>"><?php echo $v['title']?></a></li>
 			<?php } ?>	
 			</ul>
 		</div>
@@ -39,8 +42,11 @@
                         </th>
                        
                        <th>标题</th>
-                       <th>所属分类</th>
+                       
+                       <th>用途</th>
+                       
                        <th>时间</th>
+                       
                        <th>操作</th>
                         
                     </tr>
@@ -56,7 +62,7 @@
                        <td><?php echo $v['title']?></td>
                        <td><?php echo $v['type_title']?></td>
                        <td><?php echo date('Y-m-d',$v['create_time'])?></td>
-                       <td><a href="<?php echo U('Think/yuanquedit',array('id'=>$v['id']))?>">查看</a>/<a href="javascript:void(0);" onclick="del(<?php echo $v['id']?>)">删除</a></td>
+                       <td><a href="<?php echo U('Think/changfangedit',array('id'=>$v['id']))?>">查看</a>/<a href="javascript:void(0);" onclick="del(<?php echo $v['id']?>)">删除</a></td>
                             
                     </tr>
                 <?php } ?>    
@@ -97,11 +103,13 @@ $(function(){
 
 function del(id){
 	if(confirm('你确定要删除吗？')){
-		location.href="<?php echo U('Think/yuanqudel')?>&id="+id;
+		location.href="<?php echo U('Think/changfangdel')?>&id="+id;
 		
 	}
 	
 	
 }
 </script>
+
+
 </block>
