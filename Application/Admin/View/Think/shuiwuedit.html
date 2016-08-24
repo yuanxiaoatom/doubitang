@@ -4,7 +4,7 @@
 <block name="body">
 <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
     <div class="main-title cf">
-        <h2>查看[新闻中心]</h2>
+        <h2>新增 [新闻中心]</h2>
     </div>
     <!-- 标签页导航 -->
 <div class="tab-wrap">
@@ -19,28 +19,12 @@
     	td{ cellpadding:10px; height:50px; line-height:50px;}
     	td input[type=text]{ border:1px solid #ccc; height:35px; width:300px;}
     	td span{ padding:0 20px;}
-    	
-    
     </style>
     <form name='form1' action="__ACTION__" method = 'post' enctype="multipart/form-data">
     	<table width='100%' cellpadding = '10'>
     		<tr>
-    			<td width="10%">新闻标题：</td>
+    			<td width="10%">标题：</td>
     			<td><input type="text" name="title" value="<?php echo $info['title']?>"></td>
-    		</tr>
-    		
-    		<tr>
-    			<td>上传封面</td>
-    			<td><input type="file" name="photo[]"></td>
-    		</tr>
-    		
-    		<tr>
-    			<td>原封面</td>
-    			<td>
-    			<?php foreach($thumb as $k=>$v){?>
-    					<span><img src = "<?php echo $thumb[$k]?>"></span>
-    				<?php }?>
-    				</td>
     		</tr>
     		
     		<tr>
@@ -49,19 +33,16 @@
     				<select name="leixing_id">
     					<option>选择分类</option>
     					<?php foreach($typelist as $v){?>
-    						<option value="<?php echo $v['id']?>" <?php echo $v['id'] == $info['lanmu_id']?'checked=checked':''?>><?php echo $v['title']?></option>
+    						<option value="<?php echo $v['id']?>" <?php echo $v['id']==$info['leixing_id']?'selected=selected':''?>><?php echo $v['title']?></option>
     					<?php } ?>
     				</select>
     			</td>
     		</tr>
     		
-    		<tr>
-    			<td>阅读量</td>
-    			<td><input type="text" name="yueduliang" placeholder="请输入数字  如：200" value="<?php echo $info['yueduliang']?>"></td>
-    		</tr>
     		
+
     		<tr>
-    			<td>星系内容：</td>
+    			<td>详细内容：</td>
     			<td>
     				<textarea name="content" id="content" style="height:480px; width:100%"><?php echo html_entity_decode($info['content'])?></textarea>
     			</td>
@@ -72,7 +53,7 @@
     	</table>
     	
     	<div class="form-item cf" style=" margin-top:30px;">
-    	<input type="hidden" value="<?php echo $info['id']?>" name="id">
+    		<input type="hidden" name="id" value="<?php echo $info['id']?>">
             <button class="btn submit-btn "  type="submit">确 定</button>
             <a class="btn btn-return" href="javascript:;">返 回</a>
         </div>

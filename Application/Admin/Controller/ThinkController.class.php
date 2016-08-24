@@ -474,6 +474,14 @@ class ThinkController extends AdminController {
 		
 		if(IS_POST){
 			$data = $_POST;
+			if(!empty($_FILES)){
+				$info = moreUploadImg('photo',1,170,118);
+				$xiangce = json_encode($info['yuantuUrl']);
+				$thumb = json_encode($info['thumbUrl']);
+				$data['xiangce'] = $xiangce;
+				$data['thumb'] = $thumb;
+			}
+			
 			if(empty($data['yueduliang'])){
 				$data['yueduliang'] = rand(100,300);
 			}
@@ -496,9 +504,18 @@ class ThinkController extends AdminController {
 		$id = $_GET['id']+0;
 		$info = M('News')->where("id = $id")->find();
 		$this->assign('info',$info);
+		$thumb   = json_decode($info['thumb']);
+		$this->assign('thumb',$thumb);
 		if(IS_POST){
 			$id = $_POST['id'];
 			$data = $_POST;
+			if(!empty($_FILES)){
+				$info = moreUploadImg('photo',1,170,118);
+				$xiangce = json_encode($info['yuantuUrl']);
+				$thumb = json_encode($info['thumbUrl']);
+				$data['xiangce'] = $xiangce;
+				$data['thumb'] = $thumb;
+			}
 			unset($data['id']);
 			if(empty($data['yueduliang'])){
 				$data['yueduliang'] = rand(100,300);
@@ -512,6 +529,15 @@ class ThinkController extends AdminController {
 			}
 		}
 		$this->display();
+	}
+	public function newsdel(){
+		$id= $_GET['id']+0;
+		if(delete('News',array('id'=>$id))!==false){
+				$this->success('删除成功',U('Think/newslist'));exit;
+				
+			}else{
+				$this->error('删除失败');
+			}	
 	}
 	
 	/*土地信息管理*/
@@ -676,6 +702,144 @@ class ThinkController extends AdminController {
 		}
 		
 	}
+	/**
+	 * 企业服务信息管理开始
+	 * serveradd() 企业服务增加记录
+	 * serverlist()企业服务列表
+	 * serveredit()企业服务修改
+	 * serverdel() 企业服务删除
+	 */
+	public function serverlist(){
+		//读取分类信息
+		$typelist = $this->getType(133);
+		$this->assign('typelist',$typelist);
+		$type_id = $_GET['id']+0;
+		//读取新闻列表,查询所有信息
+		$newslist = $this->getList('Fuwu',$type_id);
+		$this->assign('newslist',$newslist);
+		$this->display();
+	}
+	
+	public function serveradd(){
+		//读取新闻分来的数据
+		$typelist = $this->getType(133);
+		$this->assign('typelist',$typelist);
+		
+		if(IS_POST){
+			$data = $_POST;
+			if(!empty($_FILES)){
+				$info = moreUploadImg('photo',1,240,150);
+				$xiangce = json_encode($info['yuantuUrl']);
+				$thumb = json_encode($info['thumbUrl']);
+				$data['xiangce'] = $xiangce;
+				$data['thumb'] = $thumb;
+			}
+			$data['create_time'] = time();
+			if(M('Fuwu')->add($data)!==false){
+				$this->success('添加成功',U('serverlist'));exit;
+		
+			}else{
+				$this->error('系统繁忙，请稍后再试');
+			}
+				
+		}
+		$this->display();
+	}
+	public function serveredit(){
+		$typelist = $this->getType(133);
+		$this->assign('typelist',$typelist);
+		$id = $_GET['id']+0;
+		$info = M('Fuwu')->where("id = $id")->find();
+		$this->assign('info',$info);
+		$thumb   = json_decode($info['thumb']);
+		$this->assign('thumb',$thumb);
+		if(IS_POST){
+			$id = $_POST['id'];
+			$data = $_POST;
+			if(!empty($_FILES)){
+				$info = moreUploadImg('photo',1,170,118);
+				$xiangce = json_encode($info['yuantuUrl']);
+				$thumb = json_encode($info['thumbUrl']);
+				$data['xiangce'] = $xiangce;
+				$data['thumb'] = $thumb;
+			}
+			unset($data['id']);
+			$data['create_time'] = time();
+			if(M('Fuwu')->where("id = $id")->save($data)!==false){
+				$this->success('修改成功',U('serverlist'));exit;
+		
+			}else{
+				$this->error('系统繁忙，请稍后再试');
+			}
+		}
+		
+		$this->display();
+	}
+	
+	public function serverdel(){
+		$id = $_GET['id']+0;
+		if(delete('Fuwu',array('id'=>$id))!==false){
+			$this->success('删除成功',U('Think/serverlist'));exit;
+		
+		}else{
+			$this->error('删除失败');
+		}
+		
+	}
+	
+	public function shuiwulist(){
+		//读取分类信息
+		$typelist = $this->getType(140);
+		$this->assign('typelist',$typelist);
+		$type_id = $_GET['id']+0;
+		//读取新闻列表,查询所有信息
+		$newslist = $this->getList('shuiwuguihua',$type_id);
+		$this->assign('newslist',$newslist);
+		$this->display();
+		
+	}
+	public function shuiwuadd(){
+		$typelist = $this->getType(140);
+		$this->assign('typelist',$typelist);
+		if(IS_POST){
+			$data = $_POST;
+			$data['create_time'] = time();
+			if(M('shuiwuguihua')->add($data)!==false){
+				$this->success('添加成功',U('Think/shuiwulist'));exit;
+				
+			}else{
+				$this->error('添加失败');
+			}
+		}
+		$this->display();
+	}
+	public function shuiwuedit(){
+		$id = $_GET['id']+0;
+		$typelist = $this->getType(140);
+		$this->assign('typelist',$typelist);
+		$info = M('Shuiwuguihua')->where("id = $id")->find();
+		$this->assign('info',$info);
+		if(IS_POST){
+			$data = $_POST;
+			if(M('Shuiwuguihua')->where("id = $id")->save($data)!==false){
+				$this->success('修改成功',U('shuiwulist'));exit;
+			
+			}else{
+				$this->error('系统繁忙，请稍后再试');
+			}
+		}
+		$this->display();
+	}
+	
+	public function shuiwudel(){
+		$id = $_GET['id']+0;
+		if(delete('Shuiwuguihua',array('id'=>$id))!==false){
+			$this->success('删除成功',U('Think/shuiwulist'));exit;
+		}else{
+			$this->error('删除失败');
+		}
+	
+	}
 	
 	
 	
@@ -688,6 +852,7 @@ class ThinkController extends AdminController {
 	function getType($pid){
 		return M('CategoryTree')->field("id,title,pid")->where("pid = $pid")->select();
 	}
+	
 	
 	/**
 	 * 获取地区的方法
