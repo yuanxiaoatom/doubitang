@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+<title>选取城市</title>
+<link href="__PUBLIC__/Home/css/head.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/css/gion.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+	.city{ padding-top:20px; min-height:200px;}
+	.city li{ float:left; line-height:25px; padding-right:20px; font-size:14px;}
+
+</style>
+</head>
+<body>
+	
+	<include file="Public/head1"/>
+	
+	<div class="city">
+		<ul>
+			<?php foreach($cityList as $v){?>
+			<li><a href="<?php echo U('Index/index',array('c_id'=>$v['id']))?>"><?php echo $v['title']?></a></li>
+			<?php } ?>
+		</ul>
+	
+	
+	</div>
+
+	</div>
+<div class="clear"></div>
+<div class="null-div"></div> 
+<include file='Public/footer1'/>
+</body>
+</html>

@@ -133,4 +133,24 @@ class HomeController extends Controller {
 	    $model = D($modelName);
 	    return $model->getDetailsById($id);
 	}
+	/**
+	 * 
+	 * @return unknown
+	 * 获取导航信息
+	 */
+	public function getChannel(){
+		$channel = D('Channel')->field("title,url")
+		->order('sort asc')
+		->select();
+		return  $channel;
+	}
+	/**
+	 * 
+	 * @param unknown $pid
+	 * @return Ambigous <\Think\mixed, boolean, string, NULL, multitype:, unknown, mixed, object>
+	 * 获取筛选条件信息
+	 */
+	function getType($pid){
+		return M('CategoryTree')->field("id,title,pid")->where("pid = $pid")->select();
+	}
 }

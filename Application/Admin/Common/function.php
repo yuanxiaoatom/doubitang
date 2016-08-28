@@ -440,9 +440,5 @@ function _getTree($arr,$parent_id=0,$lev=0){
 	}
 	return $list;
 }
-function pre($arr){
-	echo '<pre>';
-	print_r($arr);
-	echo '<pre>';
-}
+
 

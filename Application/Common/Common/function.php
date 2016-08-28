@@ -1104,3 +1104,8 @@ function delete($tableName,array $where = array()){
     $model = M($tableName);
     return $model->where($wherestr)->delete();
 }
+function pre($arr){
+	echo '<pre>';
+	print_r($arr);
+	echo '<pre>';
+}

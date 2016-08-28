@@ -9,50 +9,39 @@
 <script src="__PUBLIC__/Home/js/common.js"></script>
 </head>
 
+<script>
+	function getList(type,id){
+		var quyu_id = "<?php echo $quyu_id?>";
+		var gongneng_id = "<?php echo $gongneng_id?>";
+		var leixing_id = "<?php echo $leixing_id?>";
+		var jibie_id = "<?php echo $jiebie_id?>";
+		var url = "<?php echo U('Index/gion')?>"+'&'+type+'='+id;
+		if(quyu_id!=''){
+			url +="&quyu_id="+quyu_id;
+		}
+		if(gongneng_id!=''){
+			url +="&gongneng_id="+gongneng_id;
+		}
+		if(leixing_id!=''){
+			rul +='&leixing_id='+leixing_id;
+		}
+		if(jibie_id!=''){
+			url +='&jibie_id='+jibie_id;
+		}
+		location.href=url;
+	}
+</script>
 <body>
-<div class="top">
-	<p class="login"><span>登陆</span><span>注册</span>  <span class="span-right-border">我的订单</span></p>
-</div>
-
-<div class="box">
-	<div class="logo-serch">
-		<div class="logo"><img src="__PUBLIC__/Home/images/logo.png"></div>
-        <div class="address"><p>北京</p><p>[切换城市]</p></div>
-        <div class="serch"><input type="text" name="serch"><input type="button" value="搜索"></div>
-    </div>
-    <div class="clear"></div>
-    <div class="nav-type">
-    	<div class="type">全部服务分类</div>
-        <div class="nav">
-        	<ul>
-            	<li><a href="">首页</a></li>
-                <li><a href="">企业资讯</a></li>
-                <li><a href="">产业园区</a></li>
-                <li><a href="">楼宇经济</a></li>
-                <li><a href="">厂房租售</a></li>
-                <li><a href="">土地</a></li>
-                <li><a href="">购买服务</a></li>
-                <li><a href="">税务筹划</a></li>
-                <li><a href="">行业新闻</a></li>
-                <li><a href="">问答</a></li>
-                <li><a href="">在线查询</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="clear"></div>
+<include file="Public/head1"/>
     
     <div class="area-address">
     	<div class="area-address-qu">
         	<ul>
             	<li>区域</li>
                 <li class="li-style">不限</li>
-                <li>海淀</li>
-                <li>朝阳</li>
-                <li>东城</li>
-                <li>东城</li>
-                <li>东城</li>
-                <li>东城</li>
-                <li>东城</li>
+                <?php foreach($cityList as $v){?>
+                <li onclick="getList('quyu_id',<?php echo $v['id']?>)"><?php echo $v['title']?></a></li>
+                <?php } ?>
                
             </ul>
         </div>
@@ -61,10 +50,9 @@
         	<ul>
             	<li>功能</li>
                 <li class="li-style">不限</li>
-                <li>注册</li>
-                <li>土地</li>
-                <li>厂房</li>
-                <li>楼宇</li>
+                <?php foreach($gongnengList as $v){?>
+                <li onclick="getList('gongneng_id',<?php echo $v['id']?>)"><?php echo $v['title']?></li>
+                <?php } ?>
             </ul>
         </div>
         
@@ -72,10 +60,9 @@
         	<ul>
             	<li>类型</li>
                 <li class="li-style">不限</li>
-                <li>自贸区</li>
-                <li>高新技术产业开发区</li>
-                <li>保税区</li>
-                <li>旅游度假区</li>
+                <?php foreach($leixingList as $v){?>
+                <li onclick="getList('leixing_id',<?php echo $v['id']?>)"><?php echo $v['title']?></li>
+                <?php } ?>
   
             </ul>
         </div>
@@ -84,9 +71,9 @@
         	<ul>
             	<li>级别</li>
                 <li class="li-style">不限</li>
-                <li>国际级</li>
-                <li>省级</li>
-                <li>市级</li>
+                <?php foreach($jibieList as $v){?>
+                <li onclick="getList('jibie_id',<?php echo $v['id']?>)"><?php echo $v['title']?></li>
+                <?php } ?>
             </ul>
         </div>
     
@@ -94,12 +81,10 @@
 
     <div class="nav-gion">
     	<ul>
-        	<li><a href="">国家级</a></li>
-            <li><a href="">市级</a></li>
-            <li><a href="">县镇级</a></li>
-            <li><a href="">高薪技术</a></li>
-            <li><a href="">文化</a></li>
-            <li><a href="">其他</a></li>
+    	<?php foreach($jibieList as $v){?>
+            <li><a href=""><?php echo $v['title']?></a></li>
+        <?php } ?>
+        	
         </ul>
     
     </div>
