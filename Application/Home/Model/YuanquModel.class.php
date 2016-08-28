@@ -22,7 +22,7 @@ class YuanquModel extends Model
             ->where($where)
             ->order($order)
             ->limit($count)
-            ->select();
+            ->select(false);
     }
 
     /**

@@ -25,8 +25,9 @@ class UserCenterController extends HomeController{
         $this->display();
     }
     public function delete(){
-        //$data['id'] = 3;
-        $data['title'] = 'charu测试';
-        echo insert('Yuanqu',$data);
+        $data['id'] = 10;
+        //$data['title'] = '哈哈测试';
+        var_dump(delete('Yuanqu',$data));
+        echo  M("Yuanqu")->getLastSql();
     }
 }
