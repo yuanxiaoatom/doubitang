@@ -14,7 +14,7 @@
 		var quyu_id = "<?php echo $quyu_id?>";
 		var gongneng_id = "<?php echo $gongneng_id?>";
 		var leixing_id = "<?php echo $leixing_id?>";
-		var jibie_id = "<?php echo $jiebie_id?>";
+		var jibie_id = "<?php echo $jibie_id?>";
 		var url = "<?php echo U('Index/gion')?>"+'&'+type+'='+id;
 		if(quyu_id!=''){
 			url +="&quyu_id="+quyu_id;
@@ -23,7 +23,7 @@
 			url +="&gongneng_id="+gongneng_id;
 		}
 		if(leixing_id!=''){
-			rul +='&leixing_id='+leixing_id;
+			url +='&leixing_id='+leixing_id;
 		}
 		if(jibie_id!=''){
 			url +='&jibie_id='+jibie_id;
@@ -40,7 +40,7 @@
             	<li>区域</li>
                 <li class="li-style">不限</li>
                 <?php foreach($cityList as $v){?>
-                <li onclick="getList('quyu_id',<?php echo $v['id']?>)"><?php echo $v['title']?></a></li>
+                <li <?php echo $v['id']==$quyu_id ?('class="li_style"'):''?> onclick="getList('quyu_id',<?php echo $v['id']?>)"><?php echo $v['title']?></a></li>
                 <?php } ?>
                
             </ul>

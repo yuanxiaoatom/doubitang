@@ -84,9 +84,22 @@ class IndexController extends HomeController
     	//读取级别信息
     	$jibieList = $this->getType(65);
     	$this->assign('jibieList',$jibieList);
+    	//拼接url
     	
-    	//获取信息
+    	$quyu_id = 0;
+    	$gongneng_id = 0;
+    	$leixing_id = 0;
+    	$jiebie_id = 0;
+    	if(!empty($_GET['quyu_id'])) $quyu_id = $_GET['quyu_id'];
+    	if(!empty($_GET['gongneng_id'])) $gongneng_id = $_GET['gongneng_id'];
+    	if(!empty($_GET['leixing_id'])) $leixing_id = $_GET['leixing_id'];
+    	if(!empty($_GET['jibie_id'])) $jibie_id = $_GET['jibie_id'];
 
+    	$this->assign('quyu_id',$quyu_id);
+    	$this->assign('gongneng_id',$gongneng_id);
+    	$this->assign('leixing_id',$leixing_id);
+    	$this->assign('jibie_id',$jiebie_id);
+    	
     	
     	
         $list = $this->getList('Yuanqu', $_GET);
@@ -174,6 +187,25 @@ class IndexController extends HomeController
     	$cityList = $this->getType(39);
     	$this->assign("cityList",$cityList);
     	$this->display('city');
+    }
+    /**
+     * 拼接Url
+     */
+    public function  getUrl(){
+    	$type = I('post.type');
+    	$id = I('post.id');
+    	$url = U('Index/gion');
+    	static $data = array();
+    	//点击谁就将谁保存到数组中，如果有一样的则替换，没有一样的就添加
+    	if($type=='quyu_id'){
+    		$data['quyu_id'] = $id;
+    	}
+    	if($type=='gongneng_id'){
+    		$data['gongneng_id'] = $id;
+    	}
+    	pre($data);
+    	
+    	
     }
     
     
