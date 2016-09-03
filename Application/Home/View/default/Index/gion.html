@@ -26,12 +26,12 @@
 <include file="Public/head1"/>
     
     <div class="area-address">
-    	<div name="quyu" class="area-address-qu">
+    	<div class="area-address-qu">
         	<ul class="quyu">
             	<li>区域</li>
                 <li  name = "0">不限</li>
                 <?php foreach($cityList as $v){?>
-                <li <?php echo $v['id']==$quyu_id ?('class="li_style"'):''?>  name = "<?php echo $v['id']?>"><?php echo $v['title']?></a></li>
+                <li name = "<?php echo $v['id']?>"><?php echo $v['title']?></a></li>
                 <?php } ?>
                
             </ul>
