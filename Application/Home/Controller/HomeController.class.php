@@ -112,8 +112,9 @@ class HomeController extends Controller {
 	    $leixing_id = isset($request['leixing_id']) ? $request['leixing_id'] : 0;
 	    $jibie_id = isset($request['jibie_id']) ? $request['jibie_id'] : 0;
 	    $quyu_id = isset($request['quyu_id']) ? $request['quyu_id'] : 0;
-	    $zujin = isset($request['zujin']) ? $request['zujin'] :0;
-	    $mianji = isset($request['mianji']) ? $request['mianji'] :0;
+	    $zujin = isset($request['zujin_id']) ? $request['zujin_id'] :0;
+	    $mianji = isset($request['mianji_id']) ? $request['mianji_id'] :0;
+	    $jiage = isset($request['jiage_id']) ? $request['jiage_id'] :0;
 	    $page = isset($_GET['page']) ? $_GET['page'] : 1;
 	    $where = '1 = 1';
 	    // 拼接where条件
@@ -134,6 +135,11 @@ class HomeController extends Controller {
 	    }
 	    if(!empty($zujin)){
 	        $str = $categorymodel->getTitleById($zujin,71);
+	        $arr = explode('-',$str);
+	        $where .= ' AND `zujin` > '.$arr[0].' AND `zujin` < '.$arr[1];
+	    }
+	    if(!empty($jiage)){
+	        $str = $categorymodel->getTitleById($jiage,71);
 	        $arr = explode('-',$str);
 	        $where .= ' AND `zujin` > '.$arr[0].' AND `zujin` < '.$arr[1];
 	    }

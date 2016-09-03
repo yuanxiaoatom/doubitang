@@ -8,70 +8,52 @@
 <script src="__PUBLIC__/Home/js/jquery-1.9.1.min.js"></script>
 <script src="__PUBLIC__/Home/js/common.js"></script>
 </head>
-
+<script>
+	$(window).load(function(){
+		$('.quyu li[name = "{$quyu_id}"]').attr('class','li-style');
+		$('.leixing li[name = "{$leixing_id}"]').attr('class','li-style');
+		$('.jiage li[name = "{$jiage_id}"]').attr('class','li-style');
+		$(".area-address div ul li").on("click",function(){
+			$(this).siblings().attr('class','');
+			$(this).attr('class','li-style');
+			location.href = "{:U('Index/tudi')}"+'&quyu_id='+$('.quyu .li-style').attr('name')+'&leixing_id='+$('.leixing .li-style').attr('name')+'&jiage_id='+$('.jiage .li-style').attr('name');
+		});
+	});
+</script>
 <body>
-<div class="top">
-	<p class="login"><span>登陆</span><span>注册</span>  <span class="span-right-border">我的订单</span></p>
-</div>
-
-<div class="box">
-	<div class="logo-serch">
-		<div class="logo"><img src="__PUBLIC__/Home/images/logo.png"></div>
-        <div class="address"><p>北京</p><p>[切换城市]</p></div>
-        <div class="serch"><input type="text" name="serch"><input type="button" value="搜索"></div>
-    </div>
-    <div class="clear"></div>
-    <div class="nav-type">
-    	<div class="type">全部服务分类</div>
-        <div class="nav">
-        	<ul>
-            	<li><a href="">首页</a></li>
-                <li><a href="">企业资讯</a></li>
-                <li><a href="">产业园区</a></li>
-                <li><a href="">楼宇经济</a></li>
-                <li><a href="">厂房租售</a></li>
-                <li><a href="">土地</a></li>
-                <li><a href="">购买服务</a></li>
-                <li><a href="">税务筹划</a></li>
-                <li><a href="">行业新闻</a></li>
-                <li><a href="">问答</a></li>
-                <li><a href="">在线查询</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="clear"></div>
+<include file="Public/head1"/>
     
     <div class="area-address">
     	<div class="area-address-qu">
-        	<ul>
+        	<ul class='quyu'>
             	<li>区域</li>
-                <li class="li-style">不限</li>
-                
-                <?php foreach($area as $v){?>
-                <li><?php echo $area_name?></li>
-                <?php } ?>
-                
+                <li  name = "0">不限</li>
+                <?php foreach($cityList as $v){?>
+                <li name = "<?php echo $v['id']?>"><?php echo $v['title']?></a></li>
+                <?php } ?>              
             </ul>
         </div>
         
         <div class="area-address-qu">
-        	<ul>
+        	<ul class='leixing'>
             	<li>类型</li>
-                <li class="li-style">不限</li>
-                <li>仓库</li>
-                <li>厂房</li>
+                <li  name = "0">不限</li>
+                <?php foreach($leixingList as $v){?>
+                <li name = "<?php echo $v['id']?>"><?php echo $v['title']?></li>
+                <?php } ?>
             </ul>
         </div>
         
         <div class="area-address-qu">
-        	<ul>
+        	<ul class='jiage'>
             	<li>价格</li>
-                <li class="li-style">不限</li>
-                <li>300-500</li>
+                <li  name = "0">不限</li>
+                <?php foreach($jiageList as $v){?>
+                <li name = "<?php echo $v['id']?>"><?php echo $v['title']?></li>
+                <?php } ?>
             </ul>
         </div>
     </div>
-
     <div class="nav-gion">
     	<ul>
         	<li><a href="">出租</a></li>

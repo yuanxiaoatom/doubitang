@@ -112,6 +112,40 @@ class IndexController extends HomeController
      */
     public function rental()
     {
+        //读取导航信息
+        $channel = $this->getChannel();
+        $this->assign('channel', $channel);
+         
+        //获取城市的ID
+        $c_id = cookie('c_id');
+        if(empty($c_id)){
+            $c_id = 40;
+        }
+        $city_name = M('CategoryTree')->field("title")->where("id = $c_id")->find();
+        $this->assign('city_name',$city_name);
+        //获取q区域信息
+        $cityList = $this->getType($c_id);
+        $this->assign('cityList',$cityList);
+        //读取类型信息
+        $leixingList = $this->getType(60);
+        $this->assign('leixingList',$leixingList);
+        //读取价格信息
+        $jiageList = $this->getType(65);
+        $this->assign('jiageList',$jiageList);
+        //拼接url
+         
+        $quyu_id = 0;
+        $leixing_id = 0;
+        $jiage_id = 0;
+        if(!empty($_GET['quyu_id'])) $quyu_id = $_GET['quyu_id'];
+        if(!empty($_GET['leixing_id'])) $leixing_id = $_GET['leixing_id'];
+        if(!empty($_GET['jiage_id'])) $jiage_id = $_GET['jiage_id'];
+        
+        $this->assign('quyu_id',$quyu_id);
+        $this->assign('leixing_id',$leixing_id);
+        $this->assign('jiage_id',$jiage_id);
+         
+         
         $list = $this->getList('Changfang', $_GET);
         $this->assign('list', $list);
         $this->display();      
@@ -121,6 +155,39 @@ class IndexController extends HomeController
      */
     public function tudi()
     {
+        //读取导航信息
+        $channel = $this->getChannel();
+        $this->assign('channel', $channel);
+         
+        //获取城市的ID
+        $c_id = cookie('c_id');
+        if(empty($c_id)){
+            $c_id = 40;
+        }
+        $city_name = M('CategoryTree')->field("title")->where("id = $c_id")->find();
+        $this->assign('city_name',$city_name);
+        //获取区域信息
+        $cityList = $this->getType($c_id);
+        $this->assign('cityList',$cityList);
+        //读取类型信息
+        $leixingList = $this->getType(60);
+        $this->assign('leixingList',$leixingList);
+        //读取价格信息
+        $jiageList = $this->getType(65);
+        $this->assign('jiageList',$jiageList);
+        //拼接url
+         
+        $quyu_id = 0;
+        $leixing_id = 0;
+        $jiage_id = 0;
+        if(!empty($_GET['quyu_id'])) $quyu_id = $_GET['quyu_id'];
+        if(!empty($_GET['leixing_id'])) $leixing_id = $_GET['leixing_id'];
+        if(!empty($_GET['jiage_id'])) $jiage_id = $_GET['jiage_id'];
+        
+        $this->assign('quyu_id',$quyu_id);
+        $this->assign('leixing_id',$leixing_id);
+        $this->assign('jiage_id',$jiage_id);
+        
         $list = $this->getList('Tudi', $_GET);
         $this->assign('list', $list);
         $this->display(); 
@@ -130,6 +197,39 @@ class IndexController extends HomeController
      */
     public function louyu()
     {
+        //读取导航信息
+        $channel = $this->getChannel();
+        $this->assign('channel', $channel);
+         
+        //获取城市的ID
+        $c_id = cookie('c_id');
+        if(empty($c_id)){
+            $c_id = 40;
+        }
+        $city_name = M('CategoryTree')->field("title")->where("id = $c_id")->find();
+        $this->assign('city_name',$city_name);
+        //获取区域信息
+        $cityList = $this->getType($c_id);
+        $this->assign('cityList',$cityList);
+        //读取租金信息
+        $zujinList = $this->getType(60);
+        $this->assign('zujinList',$zujinList);
+        //读取面积信息
+        $mianjiList = $this->getType(65);
+        $this->assign('mianjiList',$mianjiList);
+        //拼接url
+         
+        $quyu_id = 0;
+        $zujin_id = 0;
+        $mianji_id = 0;
+        if(!empty($_GET['quyu_id'])) $quyu_id = $_GET['quyu_id'];
+        if(!empty($_GET['zujin_id'])) $zujin_id = $_GET['zujin_id'];
+        if(!empty($_GET['mianji_id'])) $mianji_id = $_GET['mianji_id'];
+        
+        $this->assign('quyu_id',$quyu_id);
+        $this->assign('zujin_id',$zujin_id);
+        $this->assign('mianji_id',$mianji_id);
+        
         $list = $this->getList('Louyu', $_GET);
         $this->assign('list', $list);
         $this->display();
